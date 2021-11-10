@@ -10,6 +10,8 @@ authored by Alexis J. Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner
 
 - Breen_Deffner_prereg.pdf contains the preregistration
 
+- PCIRR_StudyDesignTable.rtf contains the PCI RR required study design table
+
 **Softward requirements**
 
 - Stan (for running the Bayesian reinforcement learning model): https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
