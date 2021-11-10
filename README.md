@@ -10,7 +10,7 @@ authored by Alexis J. Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner
 
 - Breen_Deffner_prereg.pdf contains the preregistration
 
-- PCIRR_StudyDesignTable.rtf contains the PCI RR required study design table
+- PCIRR_StudyDesignTable.pdf contains the PCI RR required study design table
 
 **Software requirements**
 
