@@ -22,6 +22,6 @@ authored by Alexis J. Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner
 
 - Rethinking (for processing fitted model outputs): https://github.com/rmcelreath/rethinking
 
-- Tidyverse (for data wrangling): https://r4ds.had.co.nz/
+- Tidyverse (for data wrangling): https://r4ds.had.co.nz/tidy-data.html
 
-- Ggplot2 (for building graphs): https://r-graphics.org/
+- Ggplot2 (for building graphs): https://r-graphics.org/installing-a-package.html
