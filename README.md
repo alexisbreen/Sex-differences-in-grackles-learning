@@ -8,9 +8,7 @@ authored by Alexis J. Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner
 
 - Grackle_model_and_graphs.r contains the annotated code to reproduce the reinforcement learning model, agent-based model, and graphs
 
-- Breen_Deffner_prereg.pdf contains the preregistration
-
-- PCIRR_StudyDesignTable.pdf contains the PCI RR required study design table
+- Breen_Deffner_prereg.pdf contains the preregistration plus PCI RR required study design table
 
 **Software requirements**
 
@@ -22,6 +20,4 @@ authored by Alexis J. Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner
 
 - Rethinking (for processing fitted model outputs): https://github.com/rmcelreath/rethinking
 
-- Tidyverse (for data wrangling): https://r4ds.had.co.nz/tidy-data.html
-
-- Ggplot2 (for building graphs): https://r-graphics.org/installing-a-package.html
+- Tidyverse (for data wrangling/graphing): https://r4ds.had.co.nz/tidy-data.html
