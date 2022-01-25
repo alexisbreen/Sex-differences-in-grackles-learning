@@ -8,7 +8,7 @@ authored by Alexis J. Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner
 
 - Breen_Deffner_prereg.pdf contains the preregistration plus PCI RR required study design table
 
-- Grackle_model_and_graphs.r contains the annotated code to reproduce the reinforcement learning model, agent-based model, and figures 
+- Grackle_model_and_graphs.r contains the annotated code to reproduce the agent-based model, reinforcement learning model, and figures 
 
 **Software requirements**
 
