@@ -6,9 +6,9 @@ This GitHub repository hosts material for the preregistration
 
 authored by Alexis J. Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner@mpib-berlin.mpg.de)
 
-- Grackle_model_and_graphs.r contains the annotated code to reproduce the reinforcement learning model, agent-based model, and graphs
-
 - Breen_Deffner_prereg.pdf contains the preregistration plus PCI RR required study design table
+
+- Grackle_model_and_graphs.r contains the annotated code to reproduce the reinforcement learning model, agent-based model, and figures 
 
 **Software requirements**
 
