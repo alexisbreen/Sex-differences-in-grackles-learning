@@ -49,15 +49,12 @@ Stage 1 Pre-registration folder contains:
 **Softward requirements**
 
 - Stan (for running the multi-level models): https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
-
 - Rethinking (for processing fitted model outputs): https://github.com/rmcelreath/rethinking
-
 - R (for running all code): https://www.rstudio.com/
 
 **Potentially useful background material**
 
 - Statistical rethinking: A Bayesian course with examples in R and Stan by Prof. Richard McElreath: https://github.com/Booleans/statistical-rethinking/blob/master/Statistical%20Rethinking%202nd%20Edition.pdf
-
+- Statistical rethinking online - free! - course material plus lectures: https://www.youtube.com/playlist?list=PLDcUM9US4XdMROZ57-OIRtIK0aOynbgZN
 - Tidyverse (for data wrangling): https://r4ds.had.co.nz/
-
 - ggplot (for building some of the graphs): https://r-graphics.org/
