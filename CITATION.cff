@@ -1,25 +1,18 @@
 cff-version: 1.2.0
-title: >-
-  Range-expanding male birds buffer environmental
-  change by strategising risk-sensitive learning
-message: 'If you use this software, please cite it as below'
+message: "If you use this software, please cite it as below"
 type: software
 authors:
-  - given-names: Alexis J
-    name-particle: Breen
+  - given-names: "Alexis J"
+    family-names: "Breen"
     email: alexis_breen@eva.mpg.de
-    affiliation: >-
-      Max Planck Institute for Evolutionary
-      Anthropology
     orcid: 'https://orcid.org/0000-0002-2331-0920'
-  - given-names: Dominik
-    name-particle: Deffner
+  - given-names: "Dominik"
+    family-names: "Deffner"
     email: deffner@mpib-berlin.mpg.de
-    affiliation: Max Planck Institute for Human Development
     orcid: 'https://orcid.org/0000-0002-1649-3861'
-identifiers:
-  - type: doi
-    value: 10.5281/zenodo.8475
+title: "Range-expanding male birds buffer environmental change by strategising risk-sensitive learning"
+doi: 10.5281/zenodo.8475
+date-released: 2022-07-22
 repository-code: >-
-  https://github.com/alexisbreen/Sex-differences-in-grackles-learning
-date-released: '2022-07-22'
+url: "https://github.com/alexisbreen/Sex-differences-in-grackles-learning"
+
