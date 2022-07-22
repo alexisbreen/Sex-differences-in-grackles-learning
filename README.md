@@ -6,6 +6,8 @@ This GitHub repository hosts open materials for the manuscript
 
 authored by Alexis J. Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner@mpib-berlin.mpg.de)
 
+[![DOI](https://zenodo.org/badge/426571130.svg)](https://zenodo.org/badge/latestdoi/426571130)
+
 Data Processing folder contains:
 
 - Data_Processing.R script to collate, clean & curate the utilised data
