@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below"
-type: software
+type: article
 authors:
   - given-names: "Alexis J"
     family-names: "Breen"
