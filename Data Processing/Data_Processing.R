@@ -206,10 +206,10 @@ for(i in 1:nrow(dat)){
   }
 }
 
-#Drop ID column from both sheets b/c special characters can corrupt files
+#Drop ID column b/c special characters can corrupt files
 dat <- dat[, -1]
 
-#To download clean data sheets to csv
+#To download clean data sheet to csv
 #write.csv(dat,"C:\\Users\\Alexis Breen\\Desktop\\Grackle_data_clean.csv", row.names = FALSE)
 
 #End script
