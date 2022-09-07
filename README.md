@@ -8,19 +8,19 @@ authored by Alexis J. Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner
 
 [![DOI](https://zenodo.org/badge/426571130.svg)](https://zenodo.org/badge/latestdoi/426571130)
 
-and available in the Manuscript folder as a pdf. 
+and **available in the Manuscript folder** as a pdf. 
 
-Data Processing folder contains:
+**Data Processing folder contains:**
 
 - Data_Processing.R script to collate, clean & curate the utilised data
 - The original data sheets: Santa_Barbara_CA_data.csv, Tempe_AZ_data.csv & Woodland_CA_data.csv
 - Metadata regarding original data sheets
 
-Data folder contains:
+**Data folder contains:**
  
 - Grackle_data_clean.csv produced from Data_Processing.R script & used for all analyses/graphing
 
-Figures folder contains:
+**Figures folder contains:**
 
 - Figure_2.R script to reproduce Figure 2
 - Figure_3.R script to reproduce Figure 3
@@ -28,7 +28,7 @@ Figures folder contains:
 - Figure_S2.R script to reproduce Figure S2
 - Figure_S3.R script to reproduce Figure S3
 
-STAN folder contains:
+**STAN folder contains:**
 
 - STAN_Execution.R script to prepare data for, run, and post-process (e.g., extract posteriors) all multi-level STAN models
 - STAN_Poisson_Speed_Full.stan script to run multi-level Poisson regression modelling total-trials-in-test between populations
@@ -38,17 +38,17 @@ STAN folder contains:
 - STAN_Comp_Full.stan scrip to run multi-level reinforcement learning computational model - indexed by population & treatment (i.e., sex/phase) - estimating influence of phi & sigma 
 - STAN_Comp_Across_Pop.stan script to run multi-level reinforcement learning computational model - indexed by sex & phase - estimating influence of phi & sigma
 
-Simulations folder contains:
+**Simulations folder contains:**
 
 - Post_Study_Simulation_Full_Birds.R script to simulate 'new' birds matched to full sample size of data set from the estimated population of varying effects of STAN_Comp_Across_Pop.stan 
 - Post_Study_Simulation_Six_Birds.R script to simulate 'new' bird pairs - six in total - from the estimated population of varying effects of STAN_Comp_Across_Pop.stan 
 
-Stage 1 Pre-registration folder contains:
+**Pre-registration folder contains:**
 
-- Breen_Deffner_prereg.pdf copy of Peer Community In Registered Reports peer-reviewed and approved Stage 1 pre-registration 
+- Breen_Deffner_prereg.pdf copy of our pre-registration 
 - Grackle_models_and_graphs.r script to run all material - simulations, models, model-validation checks & graphs - used in Breen_Deffner_prereg.pdf
 
-**Softward requirements**
+**Softward requirements:**
 
 - Stan (for running the multi-level models): https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
 - Rethinking (for processing fitted model outputs): https://github.com/rmcelreath/rethinking
