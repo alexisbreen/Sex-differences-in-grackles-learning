@@ -2,19 +2,15 @@
 
 This GitHub repository hosts open materials for the manuscript
 
-**Range-expanding male birds buffer environmental change by strategising risk-sensitive learning**
+**Leading an urban invasion: risk-sensitive learning is a winning strategy**
 
 authored by Alexis J. Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner@mpib-berlin.mpg.de)
-
-[![DOI](https://zenodo.org/badge/426571130.svg)](https://zenodo.org/badge/latestdoi/426571130)
-
-and **available in the Manuscript folder** as a pdf. 
 
 **Data Processing folder contains:**
 
 - Data_Processing.R script to collate, clean & curate the utilised data
 - The original data sheets: Santa_Barbara_CA_data.csv, Tempe_AZ_data.csv & Woodland_CA_data.csv
-- Metadata regarding original data sheets
+- Metadata regarding the original data sheets
 
 **Data folder contains:**
  
@@ -22,31 +18,36 @@ and **available in the Manuscript folder** as a pdf.
 
 **Figures folder contains:**
 
-- Figure_2.R script to reproduce Figure 2
-- Figure_3.R script to reproduce Figure 3
-- Figure_S1.R script to reproduce Figure S1
-- Figure_S2.R script to reproduce Figure S2
-- Figure_S3.R script to reproduce Figure S3
+- Fig_2.R script to reproduce Figure 2 in the main text
+- Fig_3.R script to reproduce the heatmap in Figure 3 in the main text
+- Fig_S1.R script to reproduce Figure S1 in the supplementary
+- Fig_S2.R script to reproduce Figure S2 in the supplementary
+- Fig_S3.R script to reproduce Figure S3 in the supplementary
 
-**STAN folder contains:**
+**Models folder contains:**
 
-- STAN_Execution.R script to prepare data for, run, and post-process (e.g., extract posteriors) all multi-level STAN models
-- STAN_Poisson_Speed_Full.stan script to run multi-level Poisson regression modelling total-trials-in-test between populations
-- STAN_Poisson_Speed_Across_Pop.stan script to run multi-level Poisson regression modelling total-trials-in test across populations
-- STAN_Poisson_Switch_Full.stan script to run multi-level Poisson regression modelling total-switches-in-test between populations
-- STAN_Poisson_Switch_Across_Pop.stan script to run multi-level Poisson regression modelling total-switches-in-test across populations
-- STAN_Comp_Full.stan scrip to run multi-level reinforcement learning computational model - indexed by population & treatment (i.e., sex/phase) - estimating influence of phi & sigma 
-- STAN_Comp_Across_Pop.stan script to run multi-level reinforcement learning computational model - indexed by sex & phase - estimating influence of phi & sigma
+**Evolutionary sub-folder, containing:**
+- Evolutionary_model.R script to perform the evolutionary algorithm model of optimal learning under urban-like (or not) environments
 
-**Simulations folder contains:**
+**Forward simulation sub-folder, containing:**
+- Forward_Simulations.R script to perform the agent-based forward simulations using either the full or mean posterior distribution of our reinforcment learning model
 
-- Post_Study_Simulation_Full_Birds.R script to simulate 'new' birds matched to full sample size of data set from the estimated population of varying effects of STAN_Comp_Across_Pop.stan 
-- Post_Study_Simulation_Six_Birds.R script to simulate 'new' bird pairs - six in total - from the estimated population of varying effects of STAN_Comp_Across_Pop.stan 
+**Poisson sub-folder, containing:**
+- Poisson_Execution.R script to prepare data for, run, and post-process (e.g., extract posteriors) all multi-level Bayesian Poisson computational models in stan
+- Poisson_Speed_Across_Pop.stan script to run multi-level Poisson regression, modelling total-trials-in test across populations
+- Poisson_Speed_Full.stan script to run multi-level Poisson regression, modelling total-trials-in-test between populations
+- Poisson_Switch_Across_Pop.stan script to run multi-level Poisson regression, modelling total-switches-in-test across populations
+- Poisson_Switch_Full.stan script to run multi-level Poisson regression, modelling total-switches-in-test between populations
 
-**Pre-registration folder contains:**
+**Reinforcement learning sub-folder, containing:**
+- RL_Execution.R script to prepare data for, run, and post-process (e.g., extract posteriors) all multi-level Bayesian reinforcement learning computational models in stan
+- RL_Comp_Across_Pop.stan script to run multi-level reinforcement learning computational model - indexed by sex & phase - estimating influence of phi & sigma
+- RL_Comp_Full.stan scrip to run multi-level reinforcement learning computational model - indexed by population & treatment (i.e., sex/phase) - estimating influence of phi & sigma 
 
-- Breen_Deffner_prereg.pdf copy of our pre-registration 
-- Grackle_models_and_graphs.r script to run all material - simulations, models, model-validation checks & graphs - used in Breen_Deffner_prereg.pdf
+**Preregistration folder contains:**
+
+- Breen_Deffner_prereg.pdf copy of our study preregistration 
+- Grackle_models_and_graphs.R script to run all material - simulations, models, model-validation checks & graphs - used in Breen_Deffner_prereg.pdf
 
 **Softward requirements:**
 
@@ -56,7 +57,5 @@ and **available in the Manuscript folder** as a pdf.
 
 **Potentially useful background material**
 
-- Statistical rethinking: A Bayesian course with examples in R and Stan by Prof. Richard McElreath: https://github.com/Booleans/statistical-rethinking/blob/master/Statistical%20Rethinking%202nd%20Edition.pdf
-- Statistical rethinking online - free! - course material plus lectures: https://www.youtube.com/playlist?list=PLDcUM9US4XdMROZ57-OIRtIK0aOynbgZN
-- Tidyverse (for data wrangling): https://r4ds.had.co.nz/
-- ggplot (for building some of the graphs): https://r-graphics.org/
+- Statistical rethinking: A Bayesian course with examples in R and Stan by Prof. Richard McElreath (free pdf): https://github.com/Booleans/statistical-rethinking/blob/master/Statistical%20Rethinking%202nd%20Edition.pdf
+- Statistical rethinking online lectures: https://www.youtube.com/playlist?list=PLDcUM9US4XdMROZ57-OIRtIK0aOynbgZN
