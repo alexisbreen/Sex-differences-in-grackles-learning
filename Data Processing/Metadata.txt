@@ -1,4 +1,4 @@
-The original reversal learning data sheets were downloaded on 27 May 2022 from:
+The original reinforcement learning data sheets were downloaded on 27 May 2022 from:
 
 Tempe_AZ_data: file g_flexmanip_data_reverseraw.csv from https://knb.ecoinformatics.org/view/doi:10.5063/F1862DWC
 Santa_Barbara_CA_data: file ColorTest.csv from https://knb.ecoinformatics.org/view/doi:10.5063/F13B5XBC
