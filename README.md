@@ -49,7 +49,7 @@ authored by Alexis J. Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner
 - Breen_Deffner_prereg.pdf copy of our study preregistration 
 - Grackle_models_and_graphs.R script to run all material - simulations, models, model-validation checks & graphs - used in Breen_Deffner_prereg.pdf
 
-**Softward requirements:**
+**Software requirements:**
 
 - Stan (for running the multi-level models): https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
 - Rethinking (for processing fitted model outputs): https://github.com/rmcelreath/rethinking
