@@ -9,6 +9,8 @@
 #####################################################################################################################################################
 #Begin script
 
+#Make sure that you are in the correct working directory (".../Sex-differences-in-grackles-learning/Models/Poisson")
+
 #Load required packages
 library(tidyverse)
 library(rethinking)

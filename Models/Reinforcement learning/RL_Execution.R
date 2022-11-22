@@ -9,13 +9,15 @@
 #####################################################################################################################################################
 #Begin script
 
+#Make sure that you are in the correct working directory (".../Sex-differences-in-grackles-learning/Models/Reinforcement learning")
+
 #Load required packages
 library(tidyverse)
 library(rethinking)
 library(rstan)
 
 #Load data (file name: Grackle_data_clean.csv)
-d <- read.csv(file.choose(), header = T) 
+d <- read.csv(file.choose(), header = T)
 
 #Sheet to use for initial reinforcement learning model estimates
 d_init_RL <- d %>% filter(Criterion != 2) #No extra learning trials included
