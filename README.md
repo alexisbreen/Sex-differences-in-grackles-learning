@@ -21,8 +21,6 @@ authored by Alexis J. Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner
 - Fig_2.R script to reproduce Figure 2 in the main text
 - Fig_3.R script to reproduce the heatmap in Figure 3 in the main text
 - Fig_S1.R script to reproduce Figure S1 in the supplementary
-- Fig_S2.R script to reproduce Figure S2 in the supplementary
-- Fig_S3.R script to reproduce Figure S3 in the supplementary
 
 **Models folder contains:**
 
