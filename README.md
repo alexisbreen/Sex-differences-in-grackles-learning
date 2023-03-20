@@ -2,7 +2,7 @@
 
 This GitHub repository hosts open materials for the manuscript
 
-**Leading an urban invasion: risk-sensitive learning is a winning strategy**
+**[Leading an urban invasion: risk-sensitive learning is a winning strategy](https://doi.org/10.1101/2023.03.19.533319)**
 
 authored by Alexis J. Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner@mpib-berlin.mpg.de)
 
