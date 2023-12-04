@@ -35,11 +35,11 @@ R_Surv <- d %>% filter(Phase == 2 & Criterion == 1 & skip == 0) %>% group_by(id)
 I_Fit <- survfit(Surv(Trial, cens) ~ sex, data = I_Surv)
 R_Fit <- survfit(Surv(Trial, cens) ~ sex, data = R_Surv)
 
-#For obtaining survival probability medians to plot
-med_IF <- summary(I_Fit)$table[,'median'][1] #35
-med_IM <- summary(I_Fit)$table[,'median'][2] #32
-med_RF <- summary(R_Fit)$table[,'median'][1] #81
-med_RM <- summary(R_Fit)$table[,'median'][2] #64
+#For obtaining survival probability means to plot
+mu_IF <- round(summary(I_Fit)$table[,'rmean'][1]) #36
+mu_IM <- round(summary(I_Fit)$table[,'rmean'][2]) #35
+mu_RF <- round(summary(R_Fit)$table[,'rmean'][1]) #81
+mu_RM <- round(summary(R_Fit)$table[,'rmean'][2]) #67
 
 #Filter out extra learning trials
 d2 <- d %>% filter(Criterion != 2)
@@ -84,15 +84,8 @@ Switch_IM_mu <- mean(Switch_IM$switches)
 Switch_RF_mu <- mean(Switch_RF$switches)
 Switch_RM_mu <- mean(Switch_RM$switches)
 
-#Calculate medians
-Switch_IF_md <- median(Switch_IF$switches)
-Switch_IM_md <- median(Switch_IM$switches)
-Switch_RF_md <- median(Switch_RF$switches)
-Switch_RM_md <- median(Switch_RM$switches)
-
-#Combine means and medians
-Switch_mu <- rbind(Switch_IM_mu, Switch_IF_mu, Switch_RM_mu, Switch_RF_mu)
-Switch_md <- rbind(Switch_IM_md, Switch_IF_md, Switch_RM_md, Switch_RF_md)
+#Combine means 
+Switch_mu <- round(rbind(Switch_IM_mu, Switch_IF_mu, Switch_RM_mu, Switch_RF_mu))
 
 #Also, need to define function to execute a stacked density plot in base r, based on: https://stackoverflow.com/questions/25328533/overlapping-stacked-density-plots
 stacked.density <- function(data, fac = 3, xlim, col = 'black', 
@@ -133,11 +126,11 @@ R_Surv_pop_sim <- dat_pop_sim %>% filter(Phase == 2) %>% group_by(id) %>% filter
 I_Fit_pop_sim <- survfit(Surv(trialafter, cens) ~ sex, data = I_Surv_pop_sim)
 R_Fit_pop_sim <- survfit(Surv(trialafter, cens) ~ sex, data = R_Surv_pop_sim)
 
-#For obtaining survival probability medians to plot - note these can vary slightly due to simulation stochasticity
-med_IF_sim <- summary(I_Fit_pop_sim)$table[,'median'][1] #32
-med_IM_sim <- summary(I_Fit_pop_sim)$table[,'median'][2] #31
-med_RF_sim <- summary(R_Fit_pop_sim)$table[,'median'][1] #79
-med_RM_sim <- summary(R_Fit_pop_sim)$table[,'median'][2] #62
+#For obtaining survival probability means to plot - note these can vary slightly due to simulation stochasticity
+mu_IF_sim <- round(summary(I_Fit_pop_sim)$table[,'rmean'][1]) #35
+mu_IM_sim <- round(summary(I_Fit_pop_sim)$table[,'rmean'][2]) #38
+mu_RF_sim <- round(summary(R_Fit_pop_sim)$table[,'rmean'][1]) #91
+mu_RM_sim <- round(summary(R_Fit_pop_sim)$table[,'rmean'][2]) #71
 
 #Empty vectors
 switch_initial_sim  <- rep(NA, length(unique(dat_pop_sim$id)))
@@ -179,15 +172,8 @@ Switch_IM_mu_sim <- mean(Switch_IM_sim$switches)
 Switch_RF_mu_sim <- mean(Switch_RF_sim$switches)
 Switch_RM_mu_sim <- mean(Switch_RM_sim$switches)
 
-#Calculate medians
-Switch_IF_md_sim <- median(Switch_IF_sim$switches)
-Switch_IM_md_sim <- median(Switch_IM_sim$switches)
-Switch_RF_md_sim <- median(Switch_RF_sim$switches)
-Switch_RM_md_sim <- median(Switch_RM_sim$switches)
-
-#Combine means and medians
-Switch_mu_sim <- rbind(Switch_IM_mu_sim, Switch_IF_mu_sim, Switch_RM_mu_sim, Switch_RF_mu_sim)
-Switch_md_sim <- rbind(Switch_IM_md_sim, Switch_IF_md_sim, Switch_RM_md_sim, Switch_RF_md_sim)
+#Combine means 
+Switch_mu_sim <- round(rbind(Switch_IM_mu_sim, Switch_IF_mu_sim, Switch_RM_mu_sim, Switch_RF_mu_sim))
 
 #Individual-level forward simulations
 dat_ind_sim <- Post_Study_Sim_Fxn(N_F = 3, N_M = 3, N_sim = 1, mu_on = 1)
@@ -273,12 +259,12 @@ axis(side = 1, at = c(1,10,20,30,40,50,60,70,80,90), labels = c("Trial 1","","",
 axis(side = 1, at = c(100), labels = c("100"), cex.axis = 1.3)
 axis(side = 2, at = c(0,.1,.2,.3,.4,.6,.7,.8,.9), labels = c("0","","","","","","","",""), cex.axis = 1.3)
 axis(side = 2, at = c(0.5, 1), cex.axis = 1.3)
-abline(v = c(32,35), lty = 5, col = alpha(c("#5ec962","#fde725"), 0.8), lwd = 1.5)
+abline(v = c(mu_IM,mu_IF), lty = 5, col = alpha(c("#5ec962","#fde725"), 0.8), lwd = 1.5)
 lines(I_Fit, fun = "event", conf.int = FALSE, lty = 1, lwd = 1.5, col = alpha(c("#fde725","#5ec962"), 0.8), xlim = c(0, 1))
 mtext("Cum. prop. finish",  cex = 1.2, side = 2, line = 2.5)
 mtext("Speed", side = 3, at = 50, cex = 1.2, line = 1)
-text(x = (med_IF + 6), y = 0, med_IF)
-text(x = (med_IM - 6), y = 0, med_IM)
+text(x = (mu_IF + 6), y = 0, mu_IF)
+text(x = (mu_IM - 6), y = 0, mu_IM)
 mtext("Behaviour",  cex = 1.2, side = 2, line = 4.5, font = 2)
 mtext("A", side = 3, cex = 1.2, line = 1, las = 1, font = 2, adj = -.35)
 
@@ -294,8 +280,8 @@ mtext("Initial learning", side = 3, cex = 1.2, line = 3.5, font = 2, at = 0)
 points(jitter(Switch_IM$sex, 8), Switch_IM$switches, col = alpha(c("#5ec962"),0.6), cex = 1)
 points(jitter(Switch_IF$sex, 5), Switch_IF$switches, col = alpha(c("#fde725"),0.6), cex = 1)
 mtext("B", side = 3, cex = 1.2, line = 1, las = 1, font = 2, adj = -1.2)
-text(x = 1, y = 10.5, labels = "-10.5-", cex = 1)
-text(x = 2, y = 15, labels = "-15-", cex = 1)
+text(x = 1, y = Switch_mu[1], labels = "-14-", cex = 1)
+text(x = 2, y = Switch_mu[2], labels = "-14-", cex = 1)
 
 #Posterior
 par(mar = c(3,1,3,2))
@@ -324,12 +310,12 @@ axis(side = 1, at = c(1,20,40,60,80,100,120,140,160,180), labels = c("Trial 1","
 axis(side = 1, at = c(200), labels = c("200"), cex.axis = 1.3)
 axis(side = 2, at = c(0,.1,.2,.3,.4,.6,.7,.8,.9), labels = c("0","","","","","","","",""), cex.axis = 1.3)
 axis(side = 2, at = c(0.5, 1), cex.axis = 1.3)
-abline(v = c(64,81), lty = 5, col = alpha(c("#5ec962","#fde725"), 0.8),lwd = 1.5)
+abline(v = c(mu_RM,mu_RF), lty = 5, col = alpha(c("#5ec962","#fde725"), 0.8),lwd = 1.5)
 lines(R_Fit, fun = "event", conf.int = FALSE, lty = 1, lwd = 1.5, col = alpha(c("#fde725","#5ec962"), 0.8), xlim = c(0, 1))
 mtext("Cum. prop. finish",  cex = 1.2, side = 2, line = 2.5)
 mtext("Speed", side = 3, at = 100, cex = 1.2, line = 1)
-text(x = (med_RF + 12), y = 0, med_RF)
-text(x = (med_RM - 12), y = 0, med_RM)
+text(x = (mu_RF + 12), y = 0, mu_RF)
+text(x = (mu_RM - 12), y = 0, mu_RM)
 mtext("D", side = 3, cex = 1.2, line = 1, las = 1, font = 2, adj = -.35)
 
 
@@ -344,8 +330,8 @@ mtext("Switches", side = 3, at = 1.05, cex = 1.2, line = 1)
 mtext("Reversal learning", side = 3, cex = 1.2, line = 3.5, font = 2, at = 0)
 points(jitter(Switch_RM$sex, 8), Switch_RM$switches, col = alpha(c("#5ec962"),0.6), cex = 1)
 points(jitter(Switch_RF$sex, 5), Switch_RF$switches, col = alpha(c("#fde725"),0.6), cex = 1)
-text(x = 1, y = 25, labels = "-25-", cex = 1)
-text(x = 2, y = 35, labels = "-35-", cex = 1)
+text(x = 1, y = Switch_mu[3], labels = "-25-", cex = 1)
+text(x = 2, y = Switch_mu[4], labels = "-36-", cex = 1)
 mtext("E", side = 3, cex = 1.2, line = 1, las = 1, font = 2, adj = -1.2)
 
 #Posterior
@@ -485,10 +471,10 @@ axis(side = 2, at = c(0,.1,.2,.3,.4,.6,.7,.8,.9), labels = c("0","","","","","",
 axis(side = 2, at = c(0.5, 1), cex.axis = 1.3)
 mtext("Speed", side = 3, at = 50, cex = 1.2, line = 1)
 mtext("Cum. prop. finish",  cex = 1.2, side = 2, line = 2.5)
-abline(v = c(31,32), lty = 5, col = alpha(c("#5ec962","#fde725"), 0.8), lwd = 1.5)
+abline(v = c(mu_IM_sim,mu_IF_sim), lty = 5, col = alpha(c("#5ec962","#fde725"), 0.8), lwd = 1.5)
 lines(I_Fit_pop_sim, fun = "event", conf.int = FALSE, lty = 1, lwd = 1.5, col = alpha(c("#fde725","#5ec962"), 0.8), xlim = c(0, 1))
-text(x = (med_IF_sim + 6), y = 0, med_IF_sim)
-text(x = (med_IM_sim - 6), y = 0, med_IM_sim)
+text(x = (mu_IF_sim + 6), y = 0, mu_IF_sim)
+text(x = (mu_IM_sim - 6), y = 0, mu_IM_sim)
 mtext("Simulations",  cex = 1.2, side = 2, line = 4.5, font = 2)
 mtext("K", side = 3, cex = 1.2, line = 1, las = 1, font = 2, adj = -.35)
 
@@ -504,8 +490,8 @@ mtext("Switches", side = 3, at = 1.05, cex = 1.2, line = 1)
 for(i in 1:100)points(jitter(Switch_IM_sim$sex[i], 8), Switch_IM_sim$switches[i], col = alpha(c("#5ec962"),0.6), cex = 1)
 for(i in 1:100)points(jitter(Switch_IF_sim$sex[i], 5), Switch_IF_sim$switches[i], col = alpha(c("#fde725"),0.6), cex = 1)
 mtext("L", side = 3, cex = 1.2, line = 1, las = 1, font = 2, adj = -1.1)
-text(x = 1, y = 11, labels = "-11-", cex = 1)
-text(x = 2, y = 11, labels = "-11-", cex = 1)
+text(x = 1, y = Switch_mu_sim[1], labels = "-13-", cex = 1)
+text(x = 2, y = Switch_mu_sim[2], labels = "-14-", cex = 1)
 
 #Initial - individual-level
 par(mar = c(3,1,3,2))
@@ -543,10 +529,10 @@ axis(side = 2, at = c(0,.1,.2,.3,.4,.6,.7,.8,.9), labels = c("0","","","","","",
 axis(side = 2, at = c(0.5, 1), cex.axis = 1.3)
 mtext("Speed", side = 3, at = 100, cex = 1.2, line = 1)
 mtext("Cum. prop. finish",  cex = 1.2, side = 2, line = 2.5)
-abline(v = c(62,79), lty = 5, col = alpha(c("#5ec962","#fde725"), 0.8), lwd = 1.5)
+abline(v = c(mu_RM_sim,mu_RF_sim), lty = 5, col = alpha(c("#5ec962","#fde725"), 0.8), lwd = 1.5)
 lines(R_Fit_pop_sim, fun = "event", conf.int = FALSE, lty = 1, lwd = 1.5, col = alpha(c("#fde725","#5ec962"), 0.8), xlim = c(0, 1))
-text(x = (med_RF_sim + 12), y = 0, med_RF_sim)
-text(x = (med_RM_sim - 12), y = 0, med_RM_sim)
+text(x = (mu_RF_sim + 12), y = 0, mu_RF_sim)
+text(x = (mu_RM_sim - 12), y = 0, mu_RM_sim)
 mtext("N", side = 3, cex = 1.2, line = 1, las = 1, font = 2, adj = -.35)
 
 
@@ -561,8 +547,8 @@ mtext("Switches", side = 3, at = 1.05, cex = 1.2, line = 1)
 for(i in 1:100)points(jitter(Switch_RM_sim$sex[i], 8), Switch_RM_sim$switches[i], col = alpha(c("#5ec962"), 0.6), cex = 1)
 for(i in 1:100)points(jitter(Switch_RF_sim$sex[i], 5), Switch_RF_sim$switches[i], col = alpha(c("#fde725"), 0.6), cex = 1)
 mtext("O", side = 3, cex = 1.2, line = 1, las = 1, font = 2, adj = -1.2)
-text(x = 1, y = 20, labels = "-20-", cex = 1)
-text(x = 2, y = 29, labels = "-29-", cex = 1)
+text(x = 1, y = Switch_mu_sim[3], labels = "-23-", cex = 1)
+text(x = 2, y = Switch_mu_sim[4], labels = "-35-", cex = 1)
 
 
 #Reversal - individual-level
