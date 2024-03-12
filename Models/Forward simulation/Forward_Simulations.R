@@ -2,7 +2,7 @@
 
 #Code for performing the agent-based forward simulations for the manuscript
 
-#Leading an urban invasion: risk-sensitive learning is a winning strategy
+#Risk-sensitive learning is a winning strategy for leading an urban invasion
 
 #Authored by Alexis J Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner@mpib-berlin.mpg.de)
 
