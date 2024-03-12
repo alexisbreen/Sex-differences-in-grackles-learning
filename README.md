@@ -1,8 +1,8 @@
 # Sex-differences-in-grackles-learning
 
-This GitHub repository hosts open materials for the _eLife_ peer-reviewed preprint
+This GitHub repository hosts open materials for
 
-**A.J. Breen & Deffner, D. (2023) [Leading an urban invasion: risk-sensitive learning is a winning strategy](https://doi.org/10.7554/eLife.89315.1). _eLife_ 12:RP89315. [https://doi.org/10.7554/eLife.89315.1](https://doi.org/10.7554/eLife.89315.1)**
+**Breen, AJ & Deffner, D. (2023) [Risk-sensitive learning is a winning strategy for leading an urban invasion](https://doi.org/10.7554/eLife.89315.2). _eLife_ 12:RP89315. [https://doi.org/10.7554/eLife.89315.1](https://doi.org/10.7554/eLife.89315.1)**
 
 and all code was authored by Alexis J. Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner@mpib-berlin.mpg.de)
 
