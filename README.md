@@ -2,7 +2,7 @@
 
 This GitHub repository hosts open materials for
 
-**Breen, AJ & Deffner, D. (2023) [Risk-sensitive learning is a winning strategy for leading an urban invasion](https://doi.org/10.7554/eLife.89315.2). _eLife_ 12:RP89315. [https://doi.org/10.7554/eLife.89315.1](https://doi.org/10.7554/eLife.89315.1)**
+**Breen, A.J. & Deffner, D. (2023) [Risk-sensitive learning is a winning strategy for leading an urban invasion](https://doi.org/10.7554/eLife.89315.2). _eLife_ 12:RP89315. [https://doi.org/10.7554/eLife.89315](https://doi.org/10.7554/eLife.89315)**
 
 and all code was authored by Alexis J. Breen (alexis_breen@eva.mpg.de) & Dominik Deffner (deffner@mpib-berlin.mpg.de)
 
